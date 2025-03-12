@@ -1,0 +1,9 @@
+{
+	"name": "cdlb-datafactory",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2f03cb49-07fd-4024-ba46-24b5330f9ce7",
+		"tenantId": "a28e135c-e861-41e3-89e6-efadfa95e518"
+	}
+}

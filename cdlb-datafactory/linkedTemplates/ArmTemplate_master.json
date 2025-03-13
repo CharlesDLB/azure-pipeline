@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "cdlb-datafactory"
+		},
+		"AzureDataLakeStorageLinkedService_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageLinkedService'"
+		},
+		"AzureDataLakeStorageLinkedService2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorageLinkedService2'"
+		},
+		"AzureDataLakeStorageLinkedService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://cdlbazuredatalake.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorageLinkedService2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://cdlbazuredatalake.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://cdlb-kv.vault.azure.net/"
+		},
+		"SqlServerCDLBLinkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "PC-CDLB\\SQLEXPRESS"
+		},
+		"SqlServerCDLBLinkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorksLT2022"
+		},
+		"SqlServerCDLBLinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "cdlb"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "cdlb-datafactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorageLinkedService_accountKey": {
+						"value": "[parameters('AzureDataLakeStorageLinkedService_accountKey')]"
+					},
+					"AzureDataLakeStorageLinkedService2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorageLinkedService2_accountKey')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"SqlServerCDLBLinkedService_properties_typeProperties_server": {
+						"value": "[parameters('SqlServerCDLBLinkedService_properties_typeProperties_server')]"
+					},
+					"SqlServerCDLBLinkedService_properties_typeProperties_database": {
+						"value": "[parameters('SqlServerCDLBLinkedService_properties_typeProperties_database')]"
+					},
+					"SqlServerCDLBLinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServerCDLBLinkedService_properties_typeProperties_userName')]"
+					},
+					"AzureDataLakeStorageLinkedService_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageLinkedService_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorageLinkedService2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorageLinkedService2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

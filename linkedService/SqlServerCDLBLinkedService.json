@@ -6,7 +6,7 @@
 		"typeProperties": {
 			"server": "PC-CDLB\\SQLEXPRESS",
 			"database": "AdventureWorksLT2022",
-			"encrypt": "optional",
+			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
 			"userName": "cdlb",

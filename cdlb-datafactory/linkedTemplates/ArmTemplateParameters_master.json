@@ -17,6 +17,9 @@
 		"AzureDataLakeStorageLinkedService2_properties_typeProperties_url": {
 			"value": "https://cdlbazuredatalake.dfs.core.windows.net/"
 		},
+		"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
+			"value": "0313-124829-kv26v72x"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://cdlb-kv.vault.azure.net/"
 		},

@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "https://cdlbazuredatalake.dfs.core.windows.net/"
 		},
+		"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0313-124829-kv26v72x"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://cdlb-kv.vault.azure.net/"
@@ -89,6 +93,9 @@
 					},
 					"AzureDataLakeStorageLinkedService2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorageLinkedService2_properties_typeProperties_url')]"
+					},
+					"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricksLinkedService_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},

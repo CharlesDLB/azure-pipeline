@@ -1,0 +1,33 @@
+{
+	"name": "daily_trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copy_all_tables",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2025-03-18T17:29:00",
+				"endTime": "2025-03-20T17:29:00",
+				"timeZone": "Romance Standard Time",
+				"schedule": {
+					"minutes": [
+						45
+					],
+					"hours": [
+						18
+					]
+				}
+			}
+		}
+	}
+}

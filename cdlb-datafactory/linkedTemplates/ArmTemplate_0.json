@@ -516,11 +516,11 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2025-03-18T17:29:00",
-						"endTime": "2025-03-20T17:29:00",
+						"endTime": "2025-03-23T17:29:00",
 						"timeZone": "Romance Standard Time",
 						"schedule": {
 							"minutes": [
-								30
+								32
 							],
 							"hours": [
 								15
